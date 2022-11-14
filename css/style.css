@@ -1,0 +1,86 @@
+body {
+  font-family: "Outfit", sans-serif;
+  background-image: url(../progetto/assets/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  letter-spacing: 0.05em;
+}
+#container {
+  display: flex;
+  color: white;
+  text-align: center;
+  margin: 0 21%;
+  flex-wrap: wrap;
+}
+#logo {
+  height: 50px;
+  margin-top: 45px;
+  margin-left: 180px;
+}
+#heading1 {
+  font-weight: bold;
+  font-size: 70px;
+  line-height: 200px;
+}
+#heading2 {
+  line-height: 50px;
+  font-size: 40px;
+}
+#inputBox {
+  background-color: transparent;
+  text-decoration: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: #d20094;
+  width: 90%;
+  color: white;
+  font-size: 25px;
+  caret-color: transparent;
+  outline: transparent;
+}
+#div2 {
+  font-size: 40px;
+  margin-top: 150px;
+  margin: auto;
+}
+#info {
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+}
+#textDiv {
+  margin-top: 70px;
+  line-height: 10px;
+  padding: 5px 5px;
+}
+#btn {
+  border: 1px solid black;
+  width: 290px;
+  height: 58px;
+  margin: 80px auto;
+  padding-top: 13px;
+  background-color: #00ffff;
+  box-shadow: 0 10px 50px 5px #00ffff;
+  border: transparent;
+  font-weight: bold;
+}
+
+.star-rating {
+  width: 20%;
+  display: inline-block;
+  position: relative;
+}
+.empty-stars {
+  position: absolute;
+  color: rgba(12, 17, 59, 255);
+}
+.full-stars {
+  width: ;
+  border: 1px solid #00ffff;
+  color: #00ffff;
+  overflow: hidden;
+  white-space: nowrap;
+}
