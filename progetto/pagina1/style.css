@@ -62,20 +62,22 @@ ul li {
 }
 
 #btn-proceed {
-  background-color: #00ffff;
+  background-color: darkgray;
   color: rgb(3, 3, 59);
   text-decoration: none;
-  font-size: 1.2rem bolder;
+  font-size: 1.2rem;
   padding: 18px 50px;
-}
-
-#btn-proceed:hover {
-  box-shadow: 0 10px 50px 5px #00ffff;
+  box-shadow: 0 10px 50px 5px black;
+  font-weight: 900;
 }
 
 #checkbox {
   height: 20px;
   width: 20px;
   border: 1px solid white;
-  background-color: rgba(219, 209, 209, 0.3);
+  background-color: transparent;
+}
+
+#div-proceed {
+  font-weight: 900;
 }
