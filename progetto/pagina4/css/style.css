@@ -1,6 +1,6 @@
 body {
   font-family: "Outfit", sans-serif;
-  background-image: url(../progetto/assets/bg.jpg);
+  background-image: url(/assets/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -66,19 +66,45 @@ body {
   border: transparent;
   font-weight: bold;
 }
-
-.star-rating {
-  width: 20%;
-  display: inline-block;
+#invia {
+  background-color: #00ffff;
+  border: transparent;
+  width: 140px;
+  height: 45px;
+  font-size: 24px;
   position: relative;
+  left: 560px;
+  bottom: 45px;
+  box-shadow: 0 0px 5px 3px #00ffff;
+  transition: all 0.07s ease-in-out;
+  font-weight: bold;
 }
-.empty-stars {
+#invia:hover {
+  transform: scaleY(1.1) scaleX(1.1);
+  cursor: pointer;
+}
+.rating {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: relative;
+  width: 100%;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rating_result {
   position: absolute;
-  color: rgba(12, 17, 59, 255);
+  top: 0;
+  left: 0;
+  pointer-events: none;
 }
-.full-stars {
-  border: 1px solid #00ffff;
+.rating_star {
+  font-size: 3em;
+  cursor: pointer;
   color: #00ffff;
-  overflow: hidden;
-  white-space: nowrap;
+  transition: filter linear 0.3s;
+}
+.rating_star:hover {
+  filter: drop-shadow(1px 1px 4px #00ffff);
 }

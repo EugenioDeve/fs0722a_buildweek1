@@ -5,23 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>buildweek1
+    <title>buildweek
     </title>
 
 
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="https://fontawesome.com/icons">
+    <link rel="stylesheet" href="css/reset.css">
+    <script src="https://kit.fontawesome.com/a5690a24d7.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <img id="logo" src="assets/epicode_logo.png" alt="epicode_logo">
+    <img id="logo" src="/assets/epicode_logo.png" alt="epicode_logo">
     <div id="container">
         <div>
 
@@ -29,65 +26,38 @@
             <h2 id="heading2">From 0 to 10, how likely are you to recommend EPICODE to a friend or a colleague?</h2>
 
         </div>
+        <div class="rating">
+            <span class="rating_result"></span>
 
 
 
-        <div class="star-rating" data-rating="4.6">
+            <div class="stella1 stellaPiena">
+                <i class="rating_star far fa-star" id="1"></i>
+                <i class="rating_star far fa-star" id="2"></i>
+                <i class="rating_star far fa-star" id="3"></i>
+                <i class="rating_star far fa-star" id="4"></i>
+                <i class="rating_star far fa-star" id="5"></i>
+                <i class="rating_star far fa-star" id="6"></i>
+                <i class="rating_star far fa-star" id="7"></i>
+                <i class="rating_star far fa-star" id="8"></i>
+                <i class="rating_star far fa-star" id="9"></i>
+                <i class="rating_star far fa-star" id="10"></i>
+            </div>
         </div>
-
-
-        <div class="empty-stars">
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-
-        </div>
-
-        <div class="full-stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-
-
-        </div>
-
-
-
-
-
-
-
-
-
-
-
         <div id="div2">
             <p>Leave us an open feedback about your experience so far</p>
             <div id="textDiv">
                 <input type="text" name="inputBox" id="inputBox" placeholder="Write your comment here">
-            </div>
-            <div>
-                <div id="btn">
-                    <a id="info" href="#">MORE INFO</a>
+                <button id="invia" onclick="inviaFeed()">Send Feed
+                </button>
+                <div>
+                    <div id="btn">
+                        <a id="info" href="https://epicode.com/">MORE INFO</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script src="js/script.js"></script>
+        <script src="js/script.js"></script>
 </body>
 
 </html>
