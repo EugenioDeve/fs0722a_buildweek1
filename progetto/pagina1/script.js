@@ -5,7 +5,7 @@ let ancor = document.getElementById("btn-proceed");
 checkbox.addEventListener("click", function () {
   // se la checkbox è checked, cambia colore del bottone e rendilo usufruibile
   if (checkbox.checked) {
-    ancor.setAttribute("href", "https://www.google.com");
+    ancor.setAttribute("href", "../pagina2/pagina2.html");
 
     ancor.style.backgroundColor = "#00FFFF";
     ancor.style.boxShadow = "0 10px 50px 5px #00ffff";
