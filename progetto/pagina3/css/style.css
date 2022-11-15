@@ -1,0 +1,33 @@
+body {
+  font-family: "Outfit", sans-serif;
+  background-image: url(/progetto/assets/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  letter-spacing: 0.05em;
+}
+#container {
+  display: flex;
+  color: white;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+#logo {
+  height: 50px;
+  margin-top: 45px;
+  margin-left: 180px;
+}
+#center {
+  align-self: center;
+}
+#heading1 {
+  font-weight: bold;
+  font-size: 70px;
+  line-height: 100px;
+}
+#heading2 {
+  line-height: 20px;
+  font-size: 40px;
+}

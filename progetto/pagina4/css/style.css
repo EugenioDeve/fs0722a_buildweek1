@@ -1,6 +1,6 @@
 body {
   font-family: "Outfit", sans-serif;
-  background-image: url(/assets/bg.jpg);
+  background-image: url(/progetto/assets/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -11,8 +11,9 @@ body {
   display: flex;
   color: white;
   text-align: center;
-  margin: 0 21%;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 #logo {
   height: 50px;
