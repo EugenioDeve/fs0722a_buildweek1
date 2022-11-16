@@ -3,8 +3,8 @@ let questionText = document.getElementById("questionText");
 let answers = document.getElementsByClassName("answer");
 let risposteCorretteDate = 0;
 let nDomande = 10;
-let nDomanda = 0;
-let domanda;
+var nDomanda = 0;
+var domanda;
 
 const questions = [
   {
@@ -105,16 +105,35 @@ const questions = [
 
 
 // timer countdown
-const countdownNumberEl = document.getElementById("countdown-number");
+
+let countdownNumberEl = document.getElementById("countdown-number");
 let countdown = 30;
 
 countdownNumberEl.textContent = countdown;
 
+
 setInterval(function () {
   countdown = --countdown <= 0 ? 30 : countdown;
-
   countdownNumberEl.textContent = countdown;
+  if (countdown === 30) {
+    nDomanda++;
+    scegliEMostraDomanda(questions)
+  }
 }, 1000);
+
+
+let cerchio = document.querySelector(".cerchioBlu");
+
+
+function reset() {
+  cerchio.classList.remove("cerchioBlu");
+  console.log(cerchio);
+  countdown = 30;
+  setTimeout(function () {
+    cerchio.classList.add("cerchioBlu");
+  }, 1)
+}
+
 
 /*
 let questionText = document.getElementById("questiontext");
@@ -133,33 +152,47 @@ scegliEMostraDomanda(questions);
 for (let a of answers) {
   a.addEventListener("mousedown", function () {
     if (a.innerHTML == domanda.correct_answer) {
-      risposteCorretteDate++
+      risposteCorretteDate++;
+      console.log(risposteCorretteDate);//controlla la risposta corretta
     }
-    rimuoviDomanda(domanda, questions);
+    rimuoviDomanda();
     console.log(questions);
+    nDomanda += 1;
+    reset();
     scegliEMostraDomanda(questions);
+
   });
 }
 
 
+
+// funzione per rimuovere domanda
+function rimuoviDomanda() {
+  questionText.innerHTML = " ";
+  answers[0].innerHTML = " ";
+  answers[1].innerHTML = " ";
+  answers[2].innerHTML = " ";
+  answers[3].innerHTML = " ";
+}
+
+
+// funzione per mostrare e ciclare la domanda
 function scegliEMostraDomanda(arr) {
   //mostra una domanda casuale di arr nella pagina e aggiunge 1 a nDomanda
 
-  nDomanda += 1;
-
-  if (nDomanda == 11) {
-    window.location.href = "results.html";
+  if (nDomanda == 10) {
+    document.cookie = "risposteCorrette=" + risposteCorretteDate;
+    window.location.href = "../pagina3/index.html";
   }
   for (let a of answers) {
     //serve a resettare la visibilità nel caso la domanda precedente sia boolean (vedi l'else)
     a.style.visibility = "visible";
   }
   //sistemo il div footer
-
-  document.querySelector(".abc").innerHTML = `QUESTION ${nDomanda}/10`;
+  let vediDomanda = nDomanda + 1;
+  document.querySelector(".abc").innerHTML = `QUESTION ${vediDomanda}/10`;
   //scelgo una domanda e sistemo il testo domanda
-  let rnd = Math.round(Math.random() * (arr.length - 1));
-  domanda = arr[rnd]; //domanda contiene la domanda attuale!
+  domanda = arr[nDomanda]; //domanda contiene la domanda attuale!
   questionText.innerHTML = domanda.question;
   let totalAnswersShuffled =
     [...domanda.incorrect_answers, domanda.correct_answer].sort(() => (Math.random() > .5) ? 1 : -1)
@@ -183,6 +216,21 @@ function scegliEMostraDomanda(arr) {
 
   }
 }
+
+function deleteAllCookies() {
+  var cookies = document.cookie.split(";");
+
+  for (var i = 0; i < cookies.length; i++) {
+    var cookie = cookies[i];
+    var eqPos = cookie.indexOf("=");
+    var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+  }
+}
+deleteAllCookies();
+
+
+
 
 
 

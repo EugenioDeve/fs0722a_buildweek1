@@ -63,7 +63,7 @@ svg {
   transform: rotateY(-180deg) rotateZ(-90deg);
 }
 
-svg#blue circle {
+.cerchioBlu {
   stroke-dasharray: 376.4px;
   stroke-dashoffset: 0px;
   stroke-width: 15px;
@@ -96,7 +96,6 @@ svg#bg-trasp circle {
 }
 
 .container {
-  border: 2px solid wheat;
   max-width: 900px;
   margin: 32px auto;
 }
@@ -105,7 +104,7 @@ svg#bg-trasp circle {
   font-size: 50px;
   font-family: "Outfit" sans-serif;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 .grid {
@@ -121,6 +120,10 @@ svg#bg-trasp circle {
   border: 2px solid white;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+.grid-item:hover {
+  background-color: rgba(255, 20, 193, 0.5);
 }
 
 #footer {
