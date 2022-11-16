@@ -2,61 +2,75 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Results Quiz</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Results</title>
+
+    <link rel="stylesheet" href="css/style.css" />
 
 </head>
 
 <body>
-    <img id="logo" src="/progetto/assets/epicode_logo.png" alt="epicode_logo">
-    <div id="container">
-        <div id="correctAns">
+
+
+    <header class="logo">
+        <img src="/progetto/assets/epicode_logo.png" class="logo" alt="epicodeLogo" />
+    </header>
+
+
+
+    <main class="container">
+
+        <div>
+            <h1 class="titolo">Results</h1>
+            <h2 class="sottotitolo">The summary of your answers:</h2>
+        </div>
+
+
+
+        <div id="answerCorrect">
             <h3>Correct</h3>
-            <h3>66.7%</h3>
+            <p id="perc_giusta">66.7%</p>
+            <p id="domande_giuste">4/6 questions</p>
         </div>
 
+        <div class="cerchio_1">
 
-        <div id="center">
-            <div>
-                <h1 id="heading1">Results</h1>
-                <h2 id="heading2">The summary of your answers:</h2>
+
+            <svg id="cerchio">
+                <circle r="140" cx="50%" cy="50%" stroke="#D20094" fill="none" stroke-width="50" stroke-linecap="butt"
+                    stroke-dasharray="880, 880"></circle>
+                <circle id="valutazione" r="140" cx="50%" cy="50%" stroke="#00FFFF" fill="none" stroke-width="50"
+                    stroke-linecap="butt" stroke-dasharray="540, 880"></circle>
+            </svg>
+            <div style="position: relative">
+                <div id="circle-text">
+                    <p class="Text1">Congratulations!</p>
+                    <p class="Text1" id="Text2">You passed the exam.</p>
+                    <p class="Small_Text">
+                        We'll send you the certificate in few minutes.
+                    </p>
+                    <p class="Small_Text" id="Small_Text2">
+                        Check your email (including promotions / spam folder)
+                    </p>
+                </div>
             </div>
-            <div id="orologio">
-                <svg id="bg-trasp">
-                    <circle r="170" cx="200" cy="200">
-
-                    </circle>
-                </svg>
-                <svg id="blue">
-                    <circle r="170" cx="200" cy="200">
-
-                    </circle>
-                </svg>
-
-
-                <span class="text1">SECONDS</span>
-                <span class="text2">REMAINING</span>
-            </div>
-
         </div>
 
-        <div id="WrongAns">
+        <div id="answerWrong">
             <h3>Wrong</h3>
-            <h3>33.3%</h3>
-
-
+            <p id="perc_sbagliata">33.3%</p>
+            <p id="domande_sbagliate">2/6 questions</p>
         </div>
-    </div>
-    <footer id="footer-rate">
-        <a id="btn-rate" href="../pagina4/index.html">RATE US</a>
-    </footer>
+
+
+
+        <div class="tasto">
+            <a href="feedback.html"> <button class="btn-rate" type="button">RATE US</button> </a>
+        </div>
+    </main>
+    <script src="javascript/results.js"></script>
 </body>
-<script src="js/script.js"></script>
 
 </html>

@@ -130,3 +130,6 @@ svg#bg-trasp circle {
   margin-top: 120px;
   font-weight: 550;
 }
+.none {
+  display: none;
+}
