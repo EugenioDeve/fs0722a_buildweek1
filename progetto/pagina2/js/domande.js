@@ -181,3 +181,14 @@ function check4() {
   });
 }
 check4();
+
+let counter1 = 0;
+function conta() {
+  counter1 += 1;
+  console.log(counter1);
+  if (counter1 == 11) {
+    //cambia pagina
+    window.location.href = '../../pagina3/index.html'
+  }
+}
+setInterval(conta, 10000);

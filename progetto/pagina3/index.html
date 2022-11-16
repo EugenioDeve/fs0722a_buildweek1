@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Results Quiz</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="../pagina4/css/reset.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -19,6 +18,7 @@
     <div id="container">
         <div id="correctAns">
             <h3>Correct</h3>
+            <h3>66.7%</h3>
         </div>
 
 
@@ -27,19 +27,34 @@
                 <h1 id="heading1">Results</h1>
                 <h2 id="heading2">The summary of your answers:</h2>
             </div>
-            <div class="skill">
-                <div class="out">
-                    <div class="in">
+            <div id="orologio">
+                <svg id="bg-trasp">
+                    <circle r="170" cx="200" cy="200">
 
-                    </div>
-                </div>
+                    </circle>
+                </svg>
+                <svg id="blue">
+                    <circle r="170" cx="200" cy="200">
+
+                    </circle>
+                </svg>
+
+                <span class="timer-text">SECONDS</span>
+
+                <span class="timer-text">REMAINING</span>
             </div>
         </div>
 
         <div id="WrongAns">
             <h3>Wrong</h3>
+            <h3>33.3%</h3>
+
+
         </div>
     </div>
+    <footer id="footer-rate">
+        <a id="btn-rate" href="../pagina4/index.html">RATE US</a>
+    </footer>
 </body>
 
 </html>

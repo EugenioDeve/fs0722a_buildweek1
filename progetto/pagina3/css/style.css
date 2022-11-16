@@ -7,6 +7,7 @@ body {
   background-position: center center;
   letter-spacing: 0.05em;
 }
+
 #container {
   display: flex;
   color: white;
@@ -32,24 +33,105 @@ body {
   line-height: 20px;
   font-size: 40px;
 }
-.skill {
-  width: 160px;
-  height: 160px;
 
+#correctAns,
+#WrongAns {
+  font-size: 3rem;
+  margin-top: 50px;
+  font-weight: 700;
+}
+
+#correctAns {
+  margin-left: 500px;
+}
+
+#WrongAns {
+  padding-right: 500px;
+}
+
+#orologio {
   position: relative;
-  right: -200px;
-  margin-top: 40px;
+  height: 140px;
+  width: 140px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
 }
-.out {
-  height: 160px;
-  width: 160px;
 
-  border: 1px solid orangered;
-  border-radius: 50%;
+.timer-text {
+  color: white;
+  font-size: 10px;
 }
-.in {
-  height: 120px;
-  width: 120px;
-  border: 1px solid orangered;
-  border-radius: 50%;
+
+svg {
+  margin-top: 40px;
+  margin-left: 75px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  transform: rotateY(-180deg) rotateZ(-90deg);
+}
+
+svg#blue circle {
+  stroke-dasharray: 1140.4px;
+  stroke-dashoffset: 0px;
+  stroke-width: 50px;
+  stroke: #00ffff;
+  fill: none;
+  position: absolute;
+  z-index: 10;
+  animation: anim 2s linear forwards;
+}
+
+svg#bg-trasp circle {
+  stroke-dasharray: 1145px;
+  stroke-dasharray: 1145px;
+  stroke-dashoffset: px;
+  stroke-width: 50px;
+  stroke: #c2128d;
+
+  position: absolute;
+  z-index: 5;
+  fill: none;
+}
+
+@keyframes anim {
+  100% {
+    stroke-dashoffset: 1145px;
+  }
+}
+
+#footer-rate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#btn-rate {
+  margin-top: 350px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 18px 50px;
+  width: 90px;
+  background-color: rgb(3, 3, 59, 0);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 900;
+  border: 2px solid white;
+  box-shadow: 0 10px 50px 5px rgb(11, 8, 39);
+}
+
+#btn-rate:hover {
+  background-color: #00ffff;
+  box-shadow: 0 10px 50px 5px #00ffff;
+  color: rgb(26, 26, 68);
+  border: none;
 }

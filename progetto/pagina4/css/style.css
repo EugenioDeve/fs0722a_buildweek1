@@ -47,21 +47,21 @@ body {
   margin-top: 150px;
   margin: auto;
 }
-#info {
-  text-decoration: none;
-  color: black;
-  font-size: 30px;
-}
+
 #textDiv {
   margin-top: 70px;
   line-height: 10px;
 }
-#btn {
+
+#info {
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+  margin-top: 50px;
   border: 1px solid black;
   width: 290px;
-  height: 58px;
   margin: 80px auto;
-  padding-top: 13px;
+  padding: 15px 40px;
   background-color: #00ffff;
   box-shadow: 0 10px 50px 5px #00ffff;
   border: transparent;

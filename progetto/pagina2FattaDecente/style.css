@@ -101,7 +101,7 @@ svg#bg-trasp circle {
   margin: 32px auto;
 }
 
-#question-title {
+#questionText {
   font-size: 50px;
   font-family: "Outfit" sans-serif;
   text-align: center;
@@ -121,4 +121,9 @@ svg#bg-trasp circle {
   border: 2px solid white;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+#footer {
+  margin-top: 120px;
+  font-weight: 550;
 }

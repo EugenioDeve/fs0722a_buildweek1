@@ -1,10 +1,10 @@
-// variabile counter a zero! che aumentera
-let correct = 0;
-// variabile counter a zero che aumentera
-let wrong = 0;
 
-// indice per vedere in che domanda siamo
-let currentQuestion = 0;
+let questionText = document.getElementById("questionText");
+let answers = document.getElementsByClassName("answer");
+let risposteCorretteDate = 0;
+let nDomande = 10;
+let nDomanda = 0;
+let domanda;
 
 const questions = [
   {
@@ -102,6 +102,100 @@ const questions = [
   },
 ];
 
+
+
+// timer countdown
+const countdownNumberEl = document.getElementById("countdown-number");
+let countdown = 30;
+
+countdownNumberEl.textContent = countdown;
+
+setInterval(function () {
+  countdown = --countdown <= 0 ? 30 : countdown;
+
+  countdownNumberEl.textContent = countdown;
+}, 1000);
+
+/*
+let questionText = document.getElementById("questiontext");
+let answers = document.getElementsByClassName("answer");
+let risposteCorretteDate = 0;
+let nDomande = 10;
+let nDomanda = 0;
+let domanda;
+
+*/
+
+//##### USO DELLE FUNZIONI PER FUNZIONAMENTO DELLA PAGINA #####
+
+scegliEMostraDomanda(questions);
+
+for (let a of answers) {
+  a.addEventListener("mousedown", function () {
+    if (a.innerHTML == domanda.correct_answer) {
+      risposteCorretteDate++
+    }
+    rimuoviDomanda(domanda, questions);
+    console.log(questions);
+    scegliEMostraDomanda(questions);
+  });
+}
+
+
+function scegliEMostraDomanda(arr) {
+  //mostra una domanda casuale di arr nella pagina e aggiunge 1 a nDomanda
+
+  nDomanda += 1;
+
+  if (nDomanda == 11) {
+    window.location.href = "results.html";
+  }
+  for (let a of answers) {
+    //serve a resettare la visibilità nel caso la domanda precedente sia boolean (vedi l'else)
+    a.style.visibility = "visible";
+  }
+  //sistemo il div footer
+
+  document.querySelector(".abc").innerHTML = `QUESTION ${nDomanda}/10`;
+  //scelgo una domanda e sistemo il testo domanda
+  let rnd = Math.round(Math.random() * (arr.length - 1));
+  domanda = arr[rnd]; //domanda contiene la domanda attuale!
+  questionText.innerHTML = domanda.question;
+  let totalAnswersShuffled =
+    [...domanda.incorrect_answers, domanda.correct_answer].sort(() => (Math.random() > .5) ? 1 : -1)
+  //sistemo le risposte
+  if (domanda.type == "multiple") {
+    //caso multiple
+    //console.log("sei nel blocco multiple");
+
+
+    answers[0].innerHTML = totalAnswersShuffled[0];
+    answers[1].innerHTML = totalAnswersShuffled[1];
+    answers[2].innerHTML = totalAnswersShuffled[2];
+    answers[3].innerHTML = totalAnswersShuffled[3];
+  } else {
+    //caso boolean
+    //console.log("sei nel blocco boolean");
+    answers[0].innerHTML = totalAnswersShuffled[0];
+    answers[1].innerHTML = totalAnswersShuffled[1];
+    answers[2].style.visibility = "hidden";
+    answers[3].style.visibility = "hidden";
+
+  }
+}
+
+
+
+/*
+
+// variabile counter a zero! che aumentera
+let correct = 0;
+// variabile counter a zero che aumentera
+let wrong = 0;
+
+// indice per vedere in che domanda siamo
+let currentQuestion = 0;
+// versione alternativa WIP
 // query selector di id bottoni e titolo
 
 const questionTitle = document.getElementById("question-title");
@@ -151,15 +245,4 @@ const checkAnswer = (event) => {
     // risposta errata
   } else wrong++;
 };
-
-// timer countdown
-const countdownNumberEl = document.getElementById("countdown-number");
-let countdown = 30;
-
-countdownNumberEl.textContent = countdown;
-
-setInterval(function () {
-  countdown = --countdown <= 0 ? 30 : countdown;
-
-  countdownNumberEl.textContent = countdown;
-}, 1000);
+*/
