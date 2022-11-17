@@ -1,9 +1,22 @@
 
+
+
+// variabili globali
+
+// domanda messa a titoletto 
 let questionText = document.getElementById("questionText");
+// risposte possibili delle domande
 let answers = document.getElementsByClassName("answer");
+
+// risposte corrette che verranno aumentate
 let risposteCorretteDate = 0;
+// numero di domande nell'array
 let nDomande = 10;
+
+// indice delle domande
 var nDomanda = 0;
+
+// variabile inizializzata
 var domanda;
 
 const questions = [
@@ -115,6 +128,7 @@ countdownNumberEl.textContent = countdown;
 setInterval(function () {
   countdown = --countdown <= 0 ? 30 : countdown;
   countdownNumberEl.textContent = countdown;
+  // timer si refressha! cambia la domanda
   if (countdown === 30) {
     nDomanda++;
     scegliEMostraDomanda(questions)
@@ -122,9 +136,10 @@ setInterval(function () {
 }, 1000);
 
 
+
 let cerchio = document.querySelector(".cerchioBlu");
 
-
+// resetto la progressione del css del cerchio blu del timer
 function reset() {
   cerchio.classList.remove("cerchioBlu");
   console.log(cerchio);
@@ -135,17 +150,9 @@ function reset() {
 }
 
 
-/*
-let questionText = document.getElementById("questiontext");
-let answers = document.getElementsByClassName("answer");
-let risposteCorretteDate = 0;
-let nDomande = 10;
-let nDomanda = 0;
-let domanda;
 
-*/
 
-//##### USO DELLE FUNZIONI PER FUNZIONAMENTO DELLA PAGINA #####
+//##### Funzioni Della Pagina #####
 
 scegliEMostraDomanda(questions);
 
@@ -177,9 +184,12 @@ function rimuoviDomanda() {
 
 // funzione per mostrare e ciclare la domanda
 function scegliEMostraDomanda(arr) {
-  //mostra una domanda casuale di arr nella pagina e aggiunge 1 a nDomanda
-
   if (nDomanda == 10) {
+    const oggetto = {
+      correct: risposteCorretteDate,
+      total: questions.length,
+    };
+    sessionStorage.setItem("chiaveDiOggetto", JSON.stringify(oggetto));
     window.location.href = "../pagina3/index.html";
   }
   for (let a of answers) {
@@ -221,64 +231,3 @@ function scegliEMostraDomanda(arr) {
 
 
 
-
-/*
-
-// variabile counter a zero! che aumentera
-let correct = 0;
-// variabile counter a zero che aumentera
-let wrong = 0;
-
-// indice per vedere in che domanda siamo
-let currentQuestion = 0;
-// versione alternativa WIP
-// query selector di id bottoni e titolo
-
-const questionTitle = document.getElementById("question-title");
-const answer1 = document.getElementById("answer1");
-const answer2 = document.getElementById("answer2");
-const answer3 = document.getElementById("answer3");
-const answer4 = document.getElementById("answer4");
-
-// funzione per aggiornare la grafica in funzione del numbero della domanda
-// quando la lanci prende la domanda corente nell'array e rimpiazza i valori nell'html
-
-const changeQuestion = () => {
-  const curreQuestion = questions[currentQuestion];
-  const totalAnswers = [
-    ...curreQuestion.incorrect_answers,
-    curreQuestion.correct_answer,
-  ];
-  console.log(totalAnswers);
-  // se booleano solo due risposte
-  if (curreQuestion.type === "boolean") {
-    answer1.innerHTML = totalAnswers[0];
-    answer2.innerHTML = totalAnswers[1];
-    answer3.style.display = "none";
-    answer4.style.display = "none";
-  } else {
-    // se multiple 4 risposte
-    answer1.innerHTML = totalAnswers[0];
-    answer2.innerHTML = totalAnswers[1];
-    answer3.innerHTML = totalAnswers[2];
-    answer4.innerHTML = totalAnswers[3];
-    answer3.style.display = "block";
-    answer4.style.display = "block";
-  }
-};
-
-changeQuestion();
-
-const checkAnswer = (event) => {
-  // prendi uello che è contenuto nel div che hai cliccato
-  const clickedAnswer = event.target.textContent;
-  // prendi la domanda su cui sei fermo ora
-  const currQuestion = questions[currentQuestion];
-  // controlla se quella giusta
-  if (currentQuestion.correct_answer === clickedAnswer) {
-    // risposta esatto
-    correct++;
-    // risposta errata
-  } else wrong++;
-};
-*/

@@ -56,6 +56,7 @@ body {
   font-size: 20px;
   margin-top: -50px;
 }
+
 #answerCorrect {
   text-align: center;
   float: left;
@@ -70,6 +71,20 @@ body {
   width: 360px;
   height: 350px;
 }
+#val_cerchio2 {
+  fill: none;
+  stroke: #00ffff;
+  stroke-width: 50px;
+  stroke-dasharray: 880px;
+  stroke-dashoffset: 880px ;
+}
+
+#val_cerchio1 {
+  fill: none;
+  stroke: #d20094;
+  stroke-width: 50px;
+}
+
 #answerWrong {
   font-size: 50px;
   text-align: center;
@@ -81,7 +96,6 @@ body {
 #cerchio {
   width: 100%;
   height: 100%;
-  transform: rotate(50deg);
 }
 
 #circle-text {

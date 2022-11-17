@@ -32,3 +32,9 @@ function inviaFeed() {
     alert('Grazie per aver inviato il tuo Feedback');
 
 }
+
+
+
+
+
+
