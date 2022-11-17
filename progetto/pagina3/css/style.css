@@ -6,20 +6,23 @@ body {
   background-size: cover;
   overflow: hidden;
   background-attachment: fixed;
+  font-family: "Outfit", sans-serif;
 }
 
 /* logo epicdoe*/
 .logo {
-  padding-top: 3%;
-  padding-left: 3%;
-  width: 180px;
+  height: 50px;
+  margin-top: 37px;
+  margin-left: 172px;
+  position: absolute;
 }
 
 .container {
-  margin-left: auto;
-  margin-right: auto;
+  top: 20%;
+  left: 22%;
   width: 980px;
   height: auto;
+  position: absolute;
 }
 .sottotitolo {
   display: flex;
@@ -33,7 +36,6 @@ body {
 }
 .titolo {
   color: white;
-  font-family: "Outfit", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,17 +48,15 @@ body {
 #perc_giusta,
 #perc_sbagliata {
   color: white;
-
   font-size: 50px;
   font-weight: 600;
-  font-family: "Outfit", sans-serif;
   margin-top: -25px;
 }
 
 #domande_giuste,
 #domande_sbagliate {
   color: rgba(255, 255, 255, 0.711);
-  font-family: "Outfit", sans-serif;
+
   font-size: 20px;
   margin-top: -50px;
 }
@@ -89,7 +89,6 @@ body {
   stroke-dashoffset: 0px;
   animation: anim 2s linear forwards;
 }
-
 @keyframes anim {
   0% {
     stroke-dashoffset: 0px;
@@ -105,11 +104,12 @@ body {
   padding-top: 30px;
 }
 #cerchio {
-  width: 100%;
-  height: 100%;
+  width: 93%;
+  height: 93%;
   transform: rotateY(-180deg) rotateZ(-90deg);
+  box-shadow: 0px 0px 20px 6px black;
+  border-radius: 50%;
 }
-
 #circle-text {
   position: absolute;
   top: -17em;
@@ -149,19 +149,18 @@ body {
   width: 200px;
   height: 55px;
   border: 1px solid white;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: transparent;
   font-size: 17px;
   font-family: "Outfit", sans-serif;
   font-weight: bold;
   color: white;
-  border-radius: 2px;
+  transition: all 0.07s ease-in-out;
 }
-
 .btn-rate:hover {
-  box-shadow: 0 10px 50px 5px #00ffff;
+  box-shadow: 0 0px 5px 3px #00ffff;
   color: rgb(26, 26, 68);
-  border: none;
+  border: transparent;
   background-color: #00ffff;
-  border-radius: 2px;
   cursor: pointer;
+  transform: scaleY(1.15) scaleX(1.15);
 }

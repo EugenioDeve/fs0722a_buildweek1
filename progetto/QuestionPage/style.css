@@ -15,7 +15,9 @@ body {
 }
 
 #img-logo {
-  height: 40px;
+  height: 50px;
+  margin-top: 5px;
+  margin-left: 108px;
 }
 
 #cont-Domande {
@@ -110,7 +112,13 @@ svg#bg-trasp circle {
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px 32px;
+  gap: 50px 100px;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  width: 1000px;
+  top: 60%;
+  left: 21.5%;
 }
 
 .grid-item {
@@ -134,4 +142,9 @@ svg#bg-trasp circle {
 }
 .none {
   display: none;
+}
+.abc {
+  bottom: 10%;
+  position: absolute;
+  left: 46.5%;
 }

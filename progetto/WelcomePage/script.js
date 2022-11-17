@@ -8,7 +8,8 @@ checkbox.addEventListener("click", function () {
 
   // checkbox è checked? setto href, e il sito dell'href
   {
-    ancor.setAttribute("href", "../pagina2FattaDecente/pagina2.html");
+    document.querySelector("#div-proceed").classList.add("rilievo");
+    ancor.setAttribute("href", "../QuestionPage/pagina2.html");
 
     // colleggo lo style all'ancor
     ancor.style.backgroundColor = "#00FFFF";

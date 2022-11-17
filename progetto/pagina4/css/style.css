@@ -65,8 +65,8 @@ body {
   box-shadow: 0 10px 50px 5px #00ffff;
   border: transparent;
   font-weight: bold;
-  user-select: none;
-  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 .infoBtn {
   margin: auto;
@@ -87,6 +87,7 @@ body {
   box-shadow: 0 0px 5px 3px #00ffff;
   transition: all 0.07s ease-in-out;
   font-weight: bold;
+  transition: all 0.07s ease-in-out;
 }
 #invia:hover {
   transform: scaleY(1.1) scaleX(1.1);
@@ -101,8 +102,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  user-select: none;
-  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 .rating_result {
   position: absolute;
@@ -155,6 +156,7 @@ body {
   font-weight: 501;
   cursor: pointer;
   box-shadow: 0 0px 5px 3px #00ffff;
+  transition: all 0.07s ease-in-out;
 }
 .popUpButton:hover {
   transform: scaleY(1.1) scaleX(1.1);
@@ -163,6 +165,7 @@ body {
 .popUp {
   animation-duration: 1.2s;
   animation-name: slidein;
+  transition: all 0.07s ease-in-out;
 }
 
 @keyframes slidein {
