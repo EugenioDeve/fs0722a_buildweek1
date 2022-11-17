@@ -29,12 +29,20 @@ function printRatingResult(result, num = 0) {
 executeRating(ratingStars, ratingResult); //richiamo funzione
 
 function inviaFeed() {
-    alert('Grazie per aver inviato il tuo Feedback');
-
+    popUp();
+}
+function noPopUp() {
+    document.querySelector(".popUp").classList.add("none");
 }
 
+function popUp() {
+    document.querySelector(".popUp").classList.remove("none");
+    document.querySelector(".popUp").classList.add("animation");
+}
 
-
-
+let popUpButton = document.querySelector(".popUpButton");
+popUpButton.addEventListener("click", function () {
+    noPopUp();
+})
 
 

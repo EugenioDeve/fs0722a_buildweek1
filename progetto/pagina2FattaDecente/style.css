@@ -117,13 +117,14 @@ svg#bg-trasp circle {
   width: 100%;
   padding: 24px 0;
   border-radius: 50px;
-  border: 2px solid white;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 5px 5px 5px black;
 }
 
 .grid-item:hover {
   background-color: rgba(255, 20, 193, 0.5);
+  transform: scaleY(1.1) scaleX(1.1);
 }
 
 #footer {

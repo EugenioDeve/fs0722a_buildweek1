@@ -31,16 +31,24 @@ let percSbagliate = (sbagliate / total) * 100;
 console.log(percSbagliate);
 
 
+// n corrette /10
 document.getElementById('domande_giuste').innerHTML = corrette + '/' + total + ' questions'
+// n sbagliate / 10
 document.getElementById('domande_sbagliate').innerHTML = sbagliate + '/' + total + ' questions'
+// percentuali giuste
 document.getElementById('perc_giusta').innerHTML = percGiust + "%";
+// percentuali sbajate
 document.getElementById('perc_sbagliata').innerHTML = percSbagliate + "%";
 
+
+// se le risposte corrette sono maggiori o uguali a sei
 if (corrette >= 6) {
     document.querySelector(".Text1").innerHTML = "Congratulations!";
     document.querySelector(".Text1").style.fontSize = "1.2rem";
     document.querySelector("#Text2").innerHTML = "You passed the exam.";
 }
+
+// caso in cui sono minori di 6
 else {
     document.querySelector(".Text1").innerHTML = "You failed!";
     document.querySelector(".Text1").style.fontSize = "1.2rem";
@@ -48,13 +56,33 @@ else {
     document.querySelector("#Text2").style.color = "#D20094";
 }
 
-let number = document.getElementById("perc_sbagliata");
-let counter = 0;
-setInterval(() => {
-    if (counter == 65) {
-        clearInterval()
-    }
-    counter += 1;
-    number.innerHTML = counter;
+
+
+
+
+
+
+// funzione per far funzionare la sbarra di progressione dei Results
+function progressioneBarraRisultati() {
+
+    // mi aggancio al cerchio in questione
+    let path = document.querySelector('#val_cerchio2')
+    console.log(path)
+
+    // calcolo la progressione del cerchio che deve effettuare
+    let progressionePath = 880 / total * sbagliate
+    console.log(progressionePath)
+
+
+    path.style.strokeDashoffset = `${progressionePath}px`
+
+
+
+
+
+
+
 }
-20)
+
+progressioneBarraRisultati()
+

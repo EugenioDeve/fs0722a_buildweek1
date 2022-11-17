@@ -6,11 +6,14 @@ body {
   background-size: cover;
   overflow: hidden;
 }
+
+/* logo epicdoe*/
 .logo {
   padding-top: 3%;
   padding-left: 3%;
   width: 180px;
 }
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -88,9 +91,10 @@ body {
 
 @keyframes anim {
   100% {
-    stroke-dashoffset: 200px;
+    stroke-dashoffset: 0 px;
   }
 }
+
 #answerWrong {
   font-size: 50px;
   text-align: center;

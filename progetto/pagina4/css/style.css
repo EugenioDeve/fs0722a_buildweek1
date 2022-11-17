@@ -109,3 +109,42 @@ body {
 .rating_star:hover {
   filter: drop-shadow(1px 1px 4px #00ffff);
 }
+.popUp {
+  font-size: 30px;
+  width: 650px;
+  height: 180px;
+  position: fixed;
+  background-image: url(/progetto/assets/bg.jpg);
+  background-size: 650px 250px;
+  border: 2px solid black;
+  border-radius: 20px;
+  top: 50px;
+}
+.testoPopUp {
+  margin: 0;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.none {
+  display: none;
+}
+.popUpButton {
+  position: relative;
+  left: 72%;
+  top: 70%;
+  background-color: #00ffff;
+  width: 70px;
+  height: 35px;
+  border-radius: 20px;
+  color: black;
+  font-weight: 501;
+  cursor: pointer;
+  box-shadow: 0 0px 5px 3px #00ffff;
+}
+.popUpButton:hover {
+  transform: scaleY(1.1) scaleX(1.1);
+  cursor: pointer;
+}
