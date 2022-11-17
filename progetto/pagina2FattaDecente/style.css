@@ -119,12 +119,13 @@ svg#bg-trasp circle {
   border-radius: 50px;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 5px 5px 5px black;
+  box-shadow: -4px -2px 1.5px rgb(200, 195, 186);
 }
 
 .grid-item:hover {
   background-color: rgba(255, 20, 193, 0.5);
   transform: scaleY(1.1) scaleX(1.1);
+  cursor: pointer;
 }
 
 #footer {

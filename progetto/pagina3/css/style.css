@@ -5,6 +5,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
+  background-attachment: fixed;
 }
 
 /* logo epicdoe*/
@@ -86,12 +87,12 @@ body {
   stroke-width: 50px;
   stroke-dasharray: 880px;
   stroke-dashoffset: 0px;
-  animation: anim 1s linear forwards;
+  animation: anim 2s linear forwards;
 }
 
 @keyframes anim {
-  100% {
-    stroke-dashoffset: 0 px;
+  0% {
+    stroke-dashoffset: 0px;
   }
 }
 
@@ -111,7 +112,7 @@ body {
 
 #circle-text {
   position: absolute;
-  top: -16em;
+  top: -17em;
   left: 0.05em;
   right: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -127,6 +128,7 @@ body {
 
 #Text2 {
   color: #00ffffdc;
+  font-weight: 600;
 }
 
 .Small_Text {
@@ -146,16 +148,20 @@ body {
 .btn-rate {
   width: 200px;
   height: 55px;
-  border: 2px solid white;
-  background: #00ffff;
-  font-size: 20px;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.1);
+  font-size: 17px;
   font-family: "Outfit", sans-serif;
   font-weight: bold;
-  color: #d20094;
+  color: white;
+  border-radius: 2px;
 }
 
 .btn-rate:hover {
   box-shadow: 0 10px 50px 5px #00ffff;
   color: rgb(26, 26, 68);
   border: none;
+  background-color: #00ffff;
+  border-radius: 2px;
+  cursor: pointer;
 }

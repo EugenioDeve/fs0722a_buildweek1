@@ -115,22 +115,24 @@ const questions = [
   },
 ];
 
-
+//##### Funzioni Della Pagina #####
 
 // timer countdown
 
 let countdownNumberEl = document.getElementById("countdown-number");
 let countdown = 30;
-
 countdownNumberEl.textContent = countdown;
 
 
 setInterval(function () {
+  // il countdown scendendo è minore o uguale di zero, lo rimetti a 30, se no, continua il countdown
   countdown = --countdown <= 0 ? 30 : countdown;
   countdownNumberEl.textContent = countdown;
   // timer si refressha! cambia la domanda
   if (countdown === 30) {
+    // passa alla domanda successiva
     nDomanda++;
+    // esegui funzione
     scegliEMostraDomanda(questions)
   }
 }, 1000);
@@ -150,22 +152,30 @@ function reset() {
 }
 
 
-
-
-//##### Funzioni Della Pagina #####
-
 scegliEMostraDomanda(questions);
 
+// per ogni risposta aggiungi un event on click
 for (let a of answers) {
   a.addEventListener("mousedown", function () {
+    // se la domanda è corretta, aggiungi 1 a risposte corrette
     if (a.innerHTML == domanda.correct_answer) {
       risposteCorretteDate++;
-      console.log(risposteCorretteDate);//controlla la risposta corretta
+      console.log(risposteCorretteDate);
     }
+
+    // sempre nell'event listener
+
+    // rimuove la domanda per far apparire la successiva
     rimuoviDomanda();
     console.log(questions);
+
+    // mostra la domanda successiva 
     nDomanda += 1;
+
+    // resetto il timer
     reset();
+
+    // chiamo funzione per mostrare la domanda
     scegliEMostraDomanda(questions);
 
   });
@@ -182,41 +192,61 @@ function rimuoviDomanda() {
   answers[3].innerHTML = " ";
 }
 
+
+
+////////////////////////FUnzione per mostrare la domanda///////////////////////////
+
 // funzione per mostrare e ciclare la domanda
 function scegliEMostraDomanda(arr) {
+  // se il numero domande è uguale a 10
   if (nDomanda == 10) {
+    // creo oggetto contenente risposte corrette e la lunghezza delle domande
     const oggetto = {
       correct: risposteCorretteDate,
       total: questions.length,
     };
+    // questo oggetto verrà messo in sessiosSOtrage che poi in pagina tre potrai prendere
+    // con json.stringify ttasformo l'oggetto in stringa
     sessionStorage.setItem("chiaveDiOggetto", JSON.stringify(oggetto));
+    // mi butta in pagina 3
     window.location.href = "../pagina3/index.html";
   }
+
+
   for (let a of answers) {
-    //serve a resettare la visibilità nel caso la domanda precedente sia boolean (vedi l'else)
+    // per ogni risposta metti visibile
     a.style.visibility = "visible";
   }
-  //sistemo il div footer
+
+
   let vediDomanda = nDomanda + 1;
+
+  // aggiorno il numero in UX della domanda
   document.querySelector(".abc").innerHTML = `QUESTION ${vediDomanda}/10`;
-  //scelgo una domanda e sistemo il testo domanda
-  domanda = arr[nDomanda]; //domanda contiene la domanda attuale!
+
+
+  //domanda è presa mettendo nDomanda come index dell'array preso come parametro(questions)
+  domanda = arr[nDomanda];
+
+  // fai vedere la domanda nel html
   questionText.innerHTML = domanda.question;
+
+  // randomizza la posizione delle risposte
   let totalAnswersShuffled =
     [...domanda.incorrect_answers, domanda.correct_answer].sort(() => (Math.random() > .5) ? 1 : -1)
-  //sistemo le risposte
+
+  // if--> se la domanda è multipla
   if (domanda.type == "multiple") {
-    //caso multiple
-    //console.log("sei nel blocco multiple");
 
-
+    // mischia la posizione delle domande
     answers[0].innerHTML = totalAnswersShuffled[0];
     answers[1].innerHTML = totalAnswersShuffled[1];
     answers[2].innerHTML = totalAnswersShuffled[2];
     answers[3].innerHTML = totalAnswersShuffled[3];
   } else {
-    //caso boolean
-    //console.log("sei nel blocco boolean");
+    // se la domanda è booleano
+    // mischia solo la posizione di due risposte
+    // le altre due si nascondono
     answers[0].innerHTML = totalAnswersShuffled[0];
     answers[1].innerHTML = totalAnswersShuffled[1];
     answers[2].style.visibility = "hidden";
