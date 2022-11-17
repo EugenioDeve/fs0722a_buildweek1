@@ -48,3 +48,13 @@ else {
     document.querySelector("#Text2").style.color = "#D20094";
 }
 
+let number = document.getElementById("perc_sbagliata");
+let counter = 0;
+setInterval(() => {
+    if (counter == 65) {
+        clearInterval()
+    }
+    counter += 1;
+    number.innerHTML = counter;
+}
+20)
