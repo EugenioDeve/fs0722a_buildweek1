@@ -209,7 +209,7 @@ function scegliEMostraDomanda(arr) {
     // con json.stringify ttasformo l'oggetto in stringa
     sessionStorage.setItem("chiaveDiOggetto", JSON.stringify(oggetto));
     // mi butta in pagina 3
-    window.location.href = "../pagina3/index.html";
+    window.location.href = "../ResultPage/index.html";
   }
 
 

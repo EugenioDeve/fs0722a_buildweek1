@@ -1,7 +1,7 @@
 body {
   font-family: "Outfit", sans-serif;
   color: white;
-  background-image: url("/progetto/assets/bg.jpg");
+  background-image: url("../../assets/bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
@@ -50,7 +50,7 @@ body {
   color: white;
   font-size: 50px;
   font-weight: 600;
-  margin-top: -25px;
+  margin-top: -55px;
 }
 
 #domande_giuste,

@@ -1,6 +1,6 @@
 body {
   font-family: "Outfit", sans-serif;
-  background-image: url(/progetto/assets/bg.jpg);
+  background-image: url(../../assets/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -125,7 +125,7 @@ body {
   width: 670px;
   height: 200px;
   position: fixed;
-  background-image: url(/progetto/assets/bg.jpg);
+  background-image: url(../../assets/bg.jpg);
   background-size: 670px 200px;
   border: 2px solid black;
   border-radius: 20px;
